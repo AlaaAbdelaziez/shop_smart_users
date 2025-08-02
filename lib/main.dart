@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    //final themeProvider = Provider.of<ThemeProvider>(context); دي تغنينا عن الconsumer
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => ThemeProvider())],
       child: Consumer<ThemeProvider>(
