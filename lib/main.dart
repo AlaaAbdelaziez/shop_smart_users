@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 //Screens
 import './screens/home_screen.dart';
+import './root_screen.dart';
 
 //Consts
 import './consts/app_colors.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
               isDarkTheme: themeProvider.getISDarkTheme,
               context: context,
             ),
-            home: HomeScreen(),
+            home: RootScreen(),
           );
         },
       ),
