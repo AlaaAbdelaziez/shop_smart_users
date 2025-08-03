@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 //Widgets
 import '../widgets/title_text.dart';
+import '../widgets/app_name_widget.dart';
 
 //Sevices
 import '../services/assets_manager.dart';
@@ -20,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile Screen'),
+        title: AppNameWidget(fontSize: 20),
         leading: Image.asset(AssetsManager.shoppingCart),
       ),
       body: _buildUI(context),
