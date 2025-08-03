@@ -10,6 +10,9 @@ class Styles {
     required BuildContext context,
   }) {
     return ThemeData(
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
       scaffoldBackgroundColor: isDarkTheme
           ? AppColors.darkScaffoldColor
           : AppColors.lightScaffoldColor,
@@ -17,6 +20,13 @@ class Styles {
           ? const Color.fromARGB(255, 13, 6, 37)
           : AppColors.lightCardColor,
       brightness: isDarkTheme ? Brightness.dark : Brightness.light,
+      appBarTheme: AppBarTheme(
+        backgroundColor: isDarkTheme
+            ? AppColors.darkScaffoldColor
+            : AppColors.lightScaffoldColor,
+        elevation: 0,
+        centerTitle: false,
+      ),
     );
   }
 }
