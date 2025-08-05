@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
 //Screens
-import './screens/cart_screen.dart';
+import 'screens/cart/cart_screen.dart';
 import './screens/home_screen.dart';
 import './screens/profile_screen.dart';
 import './screens/search_screen.dart';
@@ -19,7 +19,7 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen> {
   late PageController controller;
-  int currentScreen = 3;
+  int currentScreen = 2;
   List<Widget> screens = [
     const HomeScreen(),
     const SearchScreen(),

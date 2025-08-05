@@ -22,7 +22,10 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: AppNameWidget(fontSize: 20),
-        leading: Image.asset(AssetsManager.shoppingCart),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(AssetsManager.shoppingCart),
+        ),
       ),
       body: _buildUI(context),
     );
@@ -32,80 +35,82 @@ class ProfileScreen extends StatelessWidget {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final double deviceHeight = MediaQuery.of(context).size.height;
     final double deviceWidth = MediaQuery.of(context).size.width;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Visibility(
-          visible: false,
-          child: Padding(
-            padding: EdgeInsets.all(deviceHeight * 0.018),
-            child: TitleText(title: 'Please login to have ultimate access'),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Visibility(
+            visible: false,
+            child: Padding(
+              padding: EdgeInsets.all(deviceHeight * 0.018),
+              child: TitleText(title: 'Please login to have ultimate access'),
+            ),
           ),
-        ),
-        SizedBox(height: deviceHeight * 0.009),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.02),
-          child: _userInfoRow(deviceHeight, deviceWidth, context),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: deviceWidth * 0.015,
-            vertical: deviceHeight * 0.007,
+          SizedBox(height: deviceHeight * 0.009),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: deviceWidth * 0.02),
+            child: _userInfoRow(deviceHeight, deviceWidth, context),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const TitleText(title: 'General'),
-              _genralInfoListTile(
-                deviceHeight,
-                AssetsManager.orderSvg,
-                'All Orders',
-                () {},
-              ),
-              _genralInfoListTile(
-                deviceHeight,
-                AssetsManager.wishList,
-                'Wishlist',
-                () {},
-              ),
-              _genralInfoListTile(
-                deviceHeight,
-                AssetsManager.recent,
-                'Viewed recently',
-                () {},
-              ),
-              _genralInfoListTile(
-                deviceHeight,
-                AssetsManager.address,
-                'Address',
-                () {},
-              ),
-              const Divider(),
-              TitleText(title: 'Settings'),
-              SizedBox(height: deviceHeight * 0.009),
-              SwitchListTile(
-                secondary: Image.asset(AssetsManager.theme),
-                title: Text(
-                  themeProvider.getISDarkTheme ? 'Dark mode' : 'Light mode',
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: deviceWidth * 0.015,
+              vertical: deviceHeight * 0.007,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const TitleText(title: 'General'),
+                _genralInfoListTile(
+                  deviceHeight,
+                  AssetsManager.orderSvg,
+                  'All Orders',
+                  () {},
                 ),
-                value: themeProvider.getISDarkTheme,
-                onChanged: (_value) {
-                  themeProvider.setDarkTheme(themeValue: _value);
-                },
-              ),
-              const Divider(),
-            ],
+                _genralInfoListTile(
+                  deviceHeight,
+                  AssetsManager.wishList,
+                  'Wishlist',
+                  () {},
+                ),
+                _genralInfoListTile(
+                  deviceHeight,
+                  AssetsManager.recent,
+                  'Viewed recently',
+                  () {},
+                ),
+                _genralInfoListTile(
+                  deviceHeight,
+                  AssetsManager.address,
+                  'Address',
+                  () {},
+                ),
+                const Divider(),
+                TitleText(title: 'Settings'),
+                SizedBox(height: deviceHeight * 0.009),
+                SwitchListTile(
+                  secondary: Image.asset(AssetsManager.theme),
+                  title: Text(
+                    themeProvider.getISDarkTheme ? 'Dark mode' : 'Light mode',
+                  ),
+                  value: themeProvider.getISDarkTheme,
+                  onChanged: (_value) {
+                    themeProvider.setDarkTheme(themeValue: _value);
+                  },
+                ),
+                const Divider(),
+              ],
+            ),
           ),
-        ),
-        Center(
-          child: ElevatedButton.icon(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-            onPressed: () {},
-            icon: Icon(Icons.login, color: Colors.white),
-            label: Text('Login', style: TextStyle(color: Colors.white)),
+          Center(
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+              onPressed: () {},
+              icon: Icon(Icons.login, color: Colors.white),
+              label: Text('Login', style: TextStyle(color: Colors.white)),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
