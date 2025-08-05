@@ -1,18 +1,82 @@
 //Packages
 import 'package:flutter/material.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
+
+//Widgets
+import '../../widgets/title_text.dart';
+import '../../widgets/subtitle_text.dart';
 
 class CartWidget extends StatelessWidget {
   const CartWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        FancyShimmerImage(
-          imageUrl: 'https://i.ibb.co/8r1Ny2n/20-Nike-Air-Force-1-07.png',
+    final double deviceHeight = MediaQuery.of(context).size.height;
+    final double deviceWidth = MediaQuery.of(context).size.width;
+    return FittedBox(
+      child: IntrinsicWidth(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadiusGeometry.circular(deviceWidth * 0.05),
+                child: FancyShimmerImage(
+                  imageUrl:
+                      'https://i.ibb.co/8r1Ny2n/20-Nike-Air-Force-1-07.png',
+                  height: deviceHeight * 0.2,
+                  width: deviceWidth * 0.3,
+                ),
+              ),
+              SizedBox(width: deviceWidth * 0.04),
+              IntrinsicWidth(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: deviceWidth * 0.6,
+                          child: TitleText(title: 'title' * 10, maxLines: 2),
+                        ),
+                        Column(
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.clear),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(IconlyLight.heart),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SubTitleText(title: '16\$', fontSize: 20),
+                        OutlinedButton.icon(
+                          style: OutlinedButton.styleFrom(
+                            side: BorderSide(
+                              width: 2,
+                              color: Theme.of(context).cardColor,
+                            ),
+                          ),
+                          onPressed: () {},
+                          icon: Icon(IconlyLight.arrowDown),
+                          label: Text('Qty:6'),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
-      ],
+      ),
     );
   }
 }
