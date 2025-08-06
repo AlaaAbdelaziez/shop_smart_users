@@ -5,6 +5,7 @@ import 'package:shopsmart_users/widgets/title_text.dart';
 //Widgets
 import '../../widgets/empty_bag.dart';
 import '../cart/cart_widget.dart';
+import '../cart/bottom_checkout.dart';
 
 //Services
 import '../../services/assets_manager.dart';
@@ -26,6 +27,7 @@ class CartScreen extends StatelessWidget {
             ),
           )
         : Scaffold(
+            bottomSheet: const CartBottomCheckout(),
             appBar: AppBar(
               title: const TitleText(title: 'Cart (5)'),
               leading: Padding(
