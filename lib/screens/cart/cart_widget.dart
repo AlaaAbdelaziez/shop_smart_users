@@ -9,6 +9,9 @@ import '../../widgets/title_text.dart';
 import '../../widgets/subtitle_text.dart';
 import '../cart/quantity_bottom_sheet.dart';
 
+//const
+import '../../consts/app_constants.dart';
+
 class CartWidget extends StatelessWidget {
   const CartWidget({super.key});
 
@@ -25,8 +28,7 @@ class CartWidget extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadiusGeometry.circular(deviceWidth * 0.05),
                 child: FancyShimmerImage(
-                  imageUrl:
-                      'https://i.ibb.co/8r1Ny2n/20-Nike-Air-Force-1-07.png',
+                  imageUrl: AppConstants.productImageUrl,
                   height: deviceHeight * 0.2,
                   width: deviceWidth * 0.3,
                 ),

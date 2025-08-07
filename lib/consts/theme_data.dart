@@ -30,6 +30,28 @@ class Styles {
         elevation: 0,
         centerTitle: false,
       ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        contentPadding: const EdgeInsets.all(10),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: Colors.transparent, width: 1),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: isDarkTheme ? Colors.white : Colors.black,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Theme.of(context).colorScheme.error,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
     );
   }
 }
