@@ -22,40 +22,59 @@ class _ProductWidgetState extends State<ProductWidget> {
   Widget build(BuildContext context) {
     final double deviceHeight = MediaQuery.of(context).size.height;
     final double deviceWidth = MediaQuery.of(context).size.width;
-    return Column(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(14),
-          child: FancyShimmerImage(
-            imageUrl: AppConstants.productImageUrl,
-            width: double.infinity,
-            height: deviceHeight * 0.22,
-          ),
-        ),
-        Row(
+    return Padding(
+      padding: const EdgeInsets.all(3.0),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: () {},
+        child: Column(
           children: [
-            Flexible(flex: 5, child: TitleText(title: 'title' * 10)),
-            Flexible(
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(IconlyLight.heart),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(14),
+              child: FancyShimmerImage(
+                imageUrl: AppConstants.productImageUrl,
+                width: double.infinity,
+                height: deviceHeight * 0.22,
               ),
             ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Flexible(flex: 3, child: SubTitleText(title: '1656.5\$')),
-            Flexible(
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.add_shopping_cart_rounded),
-              ),
+            Row(
+              children: [
+                Flexible(flex: 5, child: TitleText(title: 'title' * 10)),
+                Flexible(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(IconlyLight.heart),
+                  ),
+                ),
+              ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(flex: 3, child: SubTitleText(title: '1656.5\$')),
+                Flexible(
+                  child: Material(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Theme.of(context).colorScheme.secondary,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(10),
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: const Icon(
+                          Icons.add_shopping_cart_rounded,
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
           ],
         ),
-      ],
+      ),
     );
   }
 }

@@ -53,19 +53,20 @@ class _SearchScreenState extends State<SearchScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
-            searchBar(context),
-            Expanded(
-              child: DynamicHeightGridView(
-                itemCount: 220,
-                builder: ((context, index) {
-                  return ProductWidget();
-                }),
-                crossAxisCount: 2,
-              ),
-            ),
-          ],
+          children: [searchBar(context), SizedBox(height: 8), productsGrid()],
         ),
+      ),
+    );
+  }
+
+  Widget productsGrid() {
+    return Expanded(
+      child: DynamicHeightGridView(
+        itemCount: 220,
+        builder: ((context, index) {
+          return ProductWidget();
+        }),
+        crossAxisCount: 2,
       ),
     );
   }
@@ -77,10 +78,10 @@ class _SearchScreenState extends State<SearchScreen> {
         filled: true,
         suffixIcon: GestureDetector(
           onTap: () {
-            setState(() {
-              searchTextController.clear();
-              FocusScope.of(context).unfocus();
-            });
+            //  setState(() {
+            searchTextController.clear();
+            FocusScope.of(context).unfocus();
+            // });
           },
           child: const Icon(Icons.clear),
         ),

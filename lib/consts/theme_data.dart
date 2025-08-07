@@ -10,7 +10,7 @@ class Styles {
     required BuildContext context,
   }) {
     return ThemeData(
-      splashColor: Colors.transparent,
+      // splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       hoverColor: Colors.transparent,
       scaffoldBackgroundColor: isDarkTheme
