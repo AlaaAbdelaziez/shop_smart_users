@@ -8,6 +8,7 @@ import 'package:card_swiper/card_swiper.dart';
 import '../widgets/subtitle_text.dart';
 import '../widgets/title_text.dart';
 import '../widgets/app_name_widget.dart';
+import '../widgets/products/latest_arrival.dart';
 
 //Consts
 import '../consts/app_colors.dart';
@@ -38,6 +39,7 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
@@ -64,6 +66,20 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+              ),
+            ),
+            SizedBox(height: deviceHeight * 0.01),
+            const TitleText(title: 'Lateset Arrival', fontSize: 22),
+            SizedBox(height: deviceHeight * 0.01),
+            SizedBox(
+              height: deviceHeight * 0.2,
+
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return LatestArrivalProductsWidget();
+                },
               ),
             ),
           ],
