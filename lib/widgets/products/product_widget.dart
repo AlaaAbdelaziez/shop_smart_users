@@ -37,9 +37,13 @@ class _ProductWidgetState extends State<ProductWidget> {
                 height: deviceHeight * 0.22,
               ),
             ),
+            const SizedBox(height: 10),
             Row(
               children: [
-                Flexible(flex: 5, child: TitleText(title: 'title' * 10)),
+                Flexible(
+                  flex: 5,
+                  child: TitleText(title: 'title ' * 10, maxLines: 2),
+                ),
                 Flexible(
                   child: IconButton(
                     onPressed: () {},
@@ -48,6 +52,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                 ),
               ],
             ),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
