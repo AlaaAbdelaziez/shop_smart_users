@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 //Screens
 import './screens/home_screen.dart';
 import './root_screen.dart';
+import './screens/inner_screens/product_details.dart';
 
 //Consts
 import './consts/app_colors.dart';
@@ -35,6 +36,9 @@ class MyApp extends StatelessWidget {
               context: context,
             ),
             home: RootScreen(),
+            routes: {
+              ProductDetails.routeName: (context) => const ProductDetails(),
+            },
           );
         },
       ),

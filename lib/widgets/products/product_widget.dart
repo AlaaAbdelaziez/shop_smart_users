@@ -10,6 +10,9 @@ import '../../consts/app_constants.dart';
 import '../title_text.dart';
 import '../subtitle_text.dart';
 
+//Screens
+import '../../screens/inner_screens/product_details.dart';
+
 class ProductWidget extends StatefulWidget {
   const ProductWidget({super.key});
 
@@ -26,7 +29,9 @@ class _ProductWidgetState extends State<ProductWidget> {
       padding: const EdgeInsets.all(3.0),
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
-        onTap: () {},
+        onTap: () async {
+          await Navigator.pushNamed(context, ProductDetails.routeName);
+        },
         child: Column(
           children: [
             ClipRRect(

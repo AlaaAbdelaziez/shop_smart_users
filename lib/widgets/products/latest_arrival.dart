@@ -12,6 +12,9 @@ import '../../consts/app_constants.dart';
 import '../../widgets/title_text.dart';
 import '../../widgets/subtitle_text.dart';
 
+//Screens
+import '../../screens/inner_screens/product_details.dart';
+
 class LatestArrivalProductsWidget extends StatelessWidget {
   const LatestArrivalProductsWidget({super.key});
 
@@ -23,8 +26,8 @@ class LatestArrivalProductsWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () {
-          log('hhhhhhhhhhhhh');
+        onTap: () async {
+          await Navigator.pushNamed(context, ProductDetails.routeName);
         },
         child: SizedBox(
           width: deviceWidth * 0.5,
