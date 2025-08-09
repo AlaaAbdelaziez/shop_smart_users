@@ -7,8 +7,8 @@ import 'screens/cart/cart_screen.dart';
 import './screens/home_screen.dart';
 import './screens/profile_screen.dart';
 import './screens/search_screen.dart';
+
 //const
-import './consts/theme_data.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});

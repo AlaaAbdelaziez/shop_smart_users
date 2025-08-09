@@ -1,7 +1,6 @@
 //Packages
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 //Widgets
 import '../../widgets/app_name_widget.dart';
@@ -10,7 +9,6 @@ import '../../widgets/subtitle_text.dart';
 import '../../widgets/products/heart_button.dart';
 
 //Services
-import '../../services/assets_manager.dart';
 
 //const
 import '../../consts/app_constants.dart';
@@ -27,7 +25,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
     final double deviceHeight = MediaQuery.of(context).size.height;
-    final double deviceWidth = MediaQuery.of(context).size.width;
+    //final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: AppNameWidget(fontSize: 20),

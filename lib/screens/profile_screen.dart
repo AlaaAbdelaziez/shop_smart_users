@@ -14,6 +14,9 @@ import '../services/assets_manager.dart';
 //Providers
 import '../providers/theme_provider.dart';
 
+//Screens
+import '../screens/inner_screens/wish_list.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -70,7 +73,9 @@ class ProfileScreen extends StatelessWidget {
                   deviceHeight,
                   AssetsManager.wishList,
                   'Wishlist',
-                  () {},
+                  () {
+                    Navigator.pushNamed(context, WishList.routeName);
+                  },
                 ),
                 _genralInfoListTile(
                   deviceHeight,
@@ -93,8 +98,8 @@ class ProfileScreen extends StatelessWidget {
                     themeProvider.getISDarkTheme ? 'Dark mode' : 'Light mode',
                   ),
                   value: themeProvider.getISDarkTheme,
-                  onChanged: (_value) {
-                    themeProvider.setDarkTheme(themeValue: _value);
+                  onChanged: (value) {
+                    themeProvider.setDarkTheme(themeValue: value);
                   },
                 ),
                 const Divider(),

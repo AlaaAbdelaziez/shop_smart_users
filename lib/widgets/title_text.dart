@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class TitleText extends StatelessWidget {
   const TitleText({
-    Key? key,
+    super.key,
     required this.title,
     this.fontSize = 20,
     this.color,
     this.maxLines,
-  }) : super(key: key);
+  });
   final String title;
   final double fontSize;
   final Color? color;

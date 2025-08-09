@@ -40,8 +40,8 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   Widget buildUI(BuildContext context) {
-    final double deviceHeight = MediaQuery.of(context).size.height;
-    final double deviceWidth = MediaQuery.of(context).size.width;
+    // final double deviceHeight = MediaQuery.of(context).size.height;
+    //final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const TitleText(title: 'Search'),

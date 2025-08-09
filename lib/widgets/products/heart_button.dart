@@ -20,9 +20,11 @@ class _HeartButtonWidgetState extends State<HeartButtonWidget> {
     return Material(
       color: widget.color,
       shape: const CircleBorder(),
-      child: IconButton(
-        onPressed: () {},
-        icon: Icon(IconlyLight.heart, size: widget.size),
+      child: Center(
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(IconlyLight.heart, size: widget.size),
+        ),
       ),
     );
   }

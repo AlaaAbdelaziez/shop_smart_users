@@ -1,7 +1,6 @@
 //Packages
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 //const
 import '../../consts/app_constants.dart';
@@ -15,7 +14,8 @@ import '../products/heart_button.dart';
 import '../../screens/inner_screens/product_details.dart';
 
 class ProductWidget extends StatefulWidget {
-  const ProductWidget({super.key});
+  const ProductWidget({super.key, this.heartColor = Colors.transparent});
+  final Color heartColor;
 
   @override
   State<ProductWidget> createState() => _ProductWidgetState();
@@ -25,7 +25,7 @@ class _ProductWidgetState extends State<ProductWidget> {
   @override
   Widget build(BuildContext context) {
     final double deviceHeight = MediaQuery.of(context).size.height;
-    final double deviceWidth = MediaQuery.of(context).size.width;
+    //final double deviceWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(3.0),
       child: InkWell(
@@ -50,7 +50,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                   flex: 5,
                   child: TitleText(title: 'title ' * 10, maxLines: 2),
                 ),
-                Flexible(child: HeartButtonWidget()),
+                Flexible(child: HeartButtonWidget(color: widget.heartColor)),
               ],
             ),
             const SizedBox(height: 10),

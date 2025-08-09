@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 //Screens
-import './screens/home_screen.dart';
 import './root_screen.dart';
 import './screens/inner_screens/product_details.dart';
+import './screens/inner_screens/wish_list.dart';
 
 //Consts
-import './consts/app_colors.dart';
 import './consts/theme_data.dart';
 
 //Provider
@@ -38,6 +37,7 @@ class MyApp extends StatelessWidget {
             home: RootScreen(),
             routes: {
               ProductDetails.routeName: (context) => const ProductDetails(),
+              WishList.routeName: (context) => const WishList(),
             },
           );
         },

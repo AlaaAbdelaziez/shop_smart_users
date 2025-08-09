@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 
 //Services
-import '../services/assets_manager.dart';
 
 //Widgets
 import '../widgets/subtitle_text.dart';
@@ -55,13 +54,13 @@ class EmptyBagWidget extends StatelessWidget {
             SizedBox(height: deviceHeight * 0.02),
             ElevatedButton(
               onPressed: () {},
-              child: Text(
-                buttonText,
-                style: TextStyle(fontSize: deviceHeight * 0.02),
-              ),
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.all(20),
                 elevation: 3,
+              ),
+              child: Text(
+                buttonText,
+                style: TextStyle(fontSize: deviceHeight * 0.02),
               ),
             ),
           ],

@@ -1,22 +1,18 @@
 //Packages
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:card_swiper/card_swiper.dart';
 
 //Widgets
-import '../widgets/subtitle_text.dart';
 import '../widgets/title_text.dart';
 import '../widgets/app_name_widget.dart';
 import '../widgets/products/latest_arrival.dart';
 import '../widgets/products/category_rounded_widget.dart';
 
 //Consts
-import '../consts/app_colors.dart';
 import '../consts/app_constants.dart';
 
 //Provider
-import '../providers/theme_provider.dart';
 
 //Services
 import '../services/assets_manager.dart';
@@ -27,7 +23,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double deviceHeight = MediaQuery.of(context).size.height;
-    final double deviceWidth = MediaQuery.of(context).size.width;
+    // final double deviceWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(

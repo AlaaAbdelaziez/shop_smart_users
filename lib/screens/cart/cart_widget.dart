@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:shopsmart_users/screens/cart/bottom_checkout.dart';
 
 //Widgets
 import '../../widgets/title_text.dart';
