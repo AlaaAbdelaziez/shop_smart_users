@@ -9,6 +9,7 @@ import '../../consts/app_constants.dart';
 //Widgets
 import '../title_text.dart';
 import '../subtitle_text.dart';
+import '../products/heart_button.dart';
 
 //Screens
 import '../../screens/inner_screens/product_details.dart';
@@ -49,12 +50,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                   flex: 5,
                   child: TitleText(title: 'title ' * 10, maxLines: 2),
                 ),
-                Flexible(
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(IconlyLight.heart),
-                  ),
-                ),
+                Flexible(child: HeartButtonWidget()),
               ],
             ),
             const SizedBox(height: 10),

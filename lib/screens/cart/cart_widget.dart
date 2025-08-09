@@ -8,6 +8,7 @@ import 'package:shopsmart_users/screens/cart/bottom_checkout.dart';
 import '../../widgets/title_text.dart';
 import '../../widgets/subtitle_text.dart';
 import '../cart/quantity_bottom_sheet.dart';
+import '../../widgets/products/heart_button.dart';
 
 //const
 import '../../consts/app_constants.dart';
@@ -49,10 +50,7 @@ class CartWidget extends StatelessWidget {
                               onPressed: () {},
                               icon: Icon(Icons.clear),
                             ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(IconlyLight.heart),
-                            ),
+                            HeartButtonWidget(),
                           ],
                         ),
                       ],

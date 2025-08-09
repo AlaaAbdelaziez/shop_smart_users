@@ -7,6 +7,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import '../../widgets/app_name_widget.dart';
 import '../../widgets/title_text.dart';
 import '../../widgets/subtitle_text.dart';
+import '../../widgets/products/heart_button.dart';
 
 //Services
 import '../../services/assets_manager.dart';
@@ -79,14 +80,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Flexible(
-                          child: Material(
-                            color: Colors.teal.shade200,
-                            shape: const CircleBorder(),
-                            child: IconButton(
-                              onPressed: () {},
-                              icon: Icon(IconlyLight.heart),
-                            ),
-                          ),
+                          child: HeartButtonWidget(color: Colors.teal.shade200),
                         ),
                         Expanded(
                           child: ElevatedButton.icon(

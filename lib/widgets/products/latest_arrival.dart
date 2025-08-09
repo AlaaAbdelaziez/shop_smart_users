@@ -11,6 +11,7 @@ import '../../consts/app_constants.dart';
 //Widgets
 import '../../widgets/title_text.dart';
 import '../../widgets/subtitle_text.dart';
+import '../../widgets/products/heart_button.dart';
 
 //Screens
 import '../../screens/inner_screens/product_details.dart';
@@ -53,10 +54,7 @@ class LatestArrivalProductsWidget extends StatelessWidget {
                     FittedBox(
                       child: Row(
                         children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(IconlyLight.heart),
-                          ),
+                          const HeartButtonWidget(),
                           IconButton(
                             onPressed: () {},
                             icon: Icon(Icons.add_shopping_cart_rounded),
